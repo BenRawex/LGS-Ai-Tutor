@@ -3,7 +3,7 @@ import time
 from pathlib import Path
 
 import streamlit as st
-from google import genai
+from google.genai import Client
 
 # =========================
 # SAYFA AYARLARI
@@ -111,7 +111,7 @@ def create_client():
     if not api_key:
         return None
     try:
-        return genai.Client(api_key=api_key)
+        return Client(api_key=api_key)
     except Exception:
         return None
 
